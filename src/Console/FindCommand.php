@@ -1,8 +1,8 @@
 <?php
 
-namespace Barryvdh\TranslationManager\Console;
+namespace CodeMasterLTM\TranslationManager\Console;
 
-use Barryvdh\TranslationManager\Manager;
+use CodeMasterLTM\TranslationManager\Manager;
 use Illuminate\Console\Command;
 
 class FindCommand extends Command
@@ -21,9 +21,13 @@ class FindCommand extends Command
      */
     protected $description = 'Find translations in php/twig files';
 
-    /** @var \Barryvdh\TranslationManager\Manager */
+    /** @var \CodeMasterLTM\TranslationManager\Manager */
     protected $manager;
 
+    /**
+     * FindCommand constructor.
+     * @param Manager $manager
+     */
     public function __construct(Manager $manager)
     {
         $this->manager = $manager;
@@ -36,6 +40,6 @@ class FindCommand extends Command
     public function handle()
     {
         $counter = $this->manager->findTranslations(null);
-        $this->info('Done importing, processed '.$counter.' items!');
+        $this->info('Done importing, processed ' . $counter . ' items!');
     }
 }

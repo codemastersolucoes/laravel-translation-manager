@@ -1,8 +1,8 @@
 <?php
 
-namespace Barryvdh\TranslationManager\Console;
+namespace CodeMasterLTM\TranslationManager\Console;
 
-use Barryvdh\TranslationManager\Manager;
+use CodeMasterLTM\TranslationManager\Manager;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
@@ -23,9 +23,13 @@ class ExportCommand extends Command
      */
     protected $description = 'Export translations to PHP files';
 
-    /** @var \Barryvdh\TranslationManager\Manager */
+    /** @var \CodeMasterLTM\TranslationManager\Manager */
     protected $manager;
 
+    /**
+     * ExportCommand constructor.
+     * @param Manager $manager
+     */
     public function __construct(Manager $manager)
     {
         $this->manager = $manager;
@@ -55,7 +59,7 @@ class ExportCommand extends Command
         $this->manager->exportTranslations($group, $json);
 
         if (!is_null($group)) {
-            $this->info('Done writing language files for '.(($group == '*') ? 'ALL groups' : $group.' group'));
+            $this->info('Done writing language files for ' . (($group == '*') ? 'ALL groups' : $group . ' group'));
         } elseif ($json) {
             $this->info('Done writing JSON language files for translation strings');
         }

@@ -21,7 +21,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Barryvdh\\TranslationManager\\": "src/"
+      "CodeMasterLTM\\TranslationManager\\": "src/"
     }
   },
   "extra": {
@@ -30,7 +30,7 @@
     },
     "laravel": {
       "providers": [
-        "Barryvdh\\TranslationManager\\ManagerServiceProvider"
+        "CodeMasterLTM\\TranslationManager\\ManagerServiceProvider"
       ]
     }
   },

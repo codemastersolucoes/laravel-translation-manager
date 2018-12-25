@@ -1,4 +1,6 @@
-<?php namespace Barryvdh\TranslationManager\Models;
+<?php
+
+namespace CodeMasterLTM\TranslationManager\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use DB;
@@ -8,27 +10,38 @@ use DB;
  *
  * @property integer $id
  * @property integer $status
- * @property string  $locale
- * @property string  $group
- * @property string  $key
- * @property string  $value
+ * @property string $locale
+ * @property string $group
+ * @property string $key
+ * @property string $value
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  */
-class Translation extends Model{
-
+class Translation extends Model
+{
     const STATUS_SAVED = 0;
     const STATUS_CHANGED = 1;
 
     protected $table = 'ltm_translations';
     protected $guarded = array('id', 'created_at', 'updated_at');
 
+    /**
+     * @param $query
+     * @param $group
+     * @return mixed
+     */
     public function scopeOfTranslatedGroup($query, $group)
     {
         return $query->where('group', $group)->whereNotNull('value');
     }
 
-    public function scopeOrderByGroupKeys($query, $ordered) {
+    /**
+     * @param $query
+     * @param $ordered
+     * @return mixed
+     */
+    public function scopeOrderByGroupKeys($query, $ordered)
+    {
         if ($ordered) {
             $query->orderBy('group')->orderBy('key');
         }
@@ -36,11 +49,15 @@ class Translation extends Model{
         return $query;
     }
 
+    /**
+     * @param $query
+     * @return mixed
+     */
     public function scopeSelectDistinctGroup($query)
     {
         $select = '';
 
-        switch (DB::getDriverName()){
+        switch (DB::getDriverName()) {
             case 'mysql':
                 $select = 'DISTINCT `group`';
                 break;

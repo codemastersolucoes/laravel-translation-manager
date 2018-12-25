@@ -1,8 +1,8 @@
 <?php
 
-namespace Barryvdh\TranslationManager\Console;
+namespace CodeMasterLTM\TranslationManager\Console;
 
-use Barryvdh\TranslationManager\Manager;
+use CodeMasterLTM\TranslationManager\Manager;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 
@@ -22,9 +22,13 @@ class ImportCommand extends Command
      */
     protected $description = 'Import translations from the PHP sources';
 
-    /** @var \Barryvdh\TranslationManager\Manager */
+    /** @var \CodeMasterLTM\TranslationManager\Manager */
     protected $manager;
 
+    /**
+     * ImportCommand constructor.
+     * @param Manager $manager
+     */
     public function __construct(Manager $manager)
     {
         $this->manager = $manager;
@@ -38,7 +42,7 @@ class ImportCommand extends Command
     {
         $replace = $this->option('replace');
         $counter = $this->manager->importTranslations($replace);
-        $this->info('Done importing, processed '.$counter.' items!');
+        $this->info('Done importing, processed ' . $counter . ' items!');
     }
 
     /**

@@ -1,8 +1,8 @@
 <?php
 
-namespace Barryvdh\TranslationManager\Console;
+namespace CodeMasterLTM\TranslationManager\Console;
 
-use Barryvdh\TranslationManager\Manager;
+use CodeMasterLTM\TranslationManager\Manager;
 use Illuminate\Console\Command;
 
 class CleanCommand extends Command
@@ -21,9 +21,13 @@ class CleanCommand extends Command
      */
     protected $description = 'Clean empty translations';
 
-    /** @var \Barryvdh\TranslationManager\Manager */
+    /** @var \CodeMasterLTM\TranslationManager\Manager */
     protected $manager;
 
+    /**
+     * CleanCommand constructor.
+     * @param Manager $manager
+     */
     public function __construct(Manager $manager)
     {
         $this->manager = $manager;

@@ -1,9 +1,9 @@
 <?php
 
-namespace Barryvdh\TranslationManager\Console;
+namespace CodeMasterLTM\TranslationManager\Console;
 
 use Illuminate\Console\Command;
-use Barryvdh\TranslationManager\Manager;
+use CodeMasterLTM\TranslationManager\Manager;
 
 class ResetCommand extends Command
 {
@@ -21,9 +21,13 @@ class ResetCommand extends Command
      */
     protected $description = 'Delete all translations from the database';
 
-    /** @var \Barryvdh\TranslationManager\Manager */
+    /** @var \CodeMasterLTM\TranslationManager\Manager */
     protected $manager;
 
+    /**
+     * ResetCommand constructor.
+     * @param Manager $manager
+     */
     public function __construct(Manager $manager)
     {
         $this->manager = $manager;

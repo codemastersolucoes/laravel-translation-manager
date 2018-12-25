@@ -1,4 +1,6 @@
-<?php namespace Barryvdh\TranslationManager;
+<?php
+
+namespace CodeMasterLTM\TranslationManager;
 
 use Illuminate\Translation\Translator as LaravelTranslator;
 use Illuminate\Events\Dispatcher;
@@ -31,11 +33,17 @@ class Translator extends LaravelTranslator {
         return $result;
     }
 
+    /**
+     * @param Manager $manager
+     */
     public function setTranslationManager(Manager $manager)
     {
         $this->manager = $manager;
     }
 
+    /**
+     * @param $key
+     */
     protected function notifyMissingKey($key)
     {
         list($namespace, $group, $item) = $this->parseKey($key);
