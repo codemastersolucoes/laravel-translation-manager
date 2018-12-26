@@ -1,6 +1,6 @@
 <?php
 
-namespace CodeMasterLTM\TranslationManager\Models;
+namespace CodeMaster\TranslationManager\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use DB;

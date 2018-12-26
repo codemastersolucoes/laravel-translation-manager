@@ -1,15 +1,15 @@
 <?php
 
-namespace CodeMasterLTM\TranslationManager;
+namespace CodeMaster\TranslationManager;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
-use CodeMasterLTM\TranslationManager\Models\Translation;
+use CodeMaster\TranslationManager\Models\Translation;
 use Illuminate\Support\Collection;
 
 class Controller extends BaseController
 {
-    /** @var \CodeMasterLTM\TranslationManager\Manager */
+    /** @var \CodeMaster\TranslationManager\Manager */
     protected $manager;
 
     /**
@@ -56,7 +56,7 @@ class Controller extends BaseController
             ->with('group', $group)
             ->with('numTranslations', $numTranslations)
             ->with('numChanged', $numChanged)
-            ->with('editUrl', action('\CodeMasterLTM\TranslationManager\Controller@postEdit', [$group]))
+            ->with('editUrl', action('\CodeMaster\TranslationManager\Controller@postEdit', [$group]))
             ->with('deleteEnabled', $this->manager->getConfig('delete_enabled'));
     }
 
@@ -187,7 +187,7 @@ class Controller extends BaseController
     {
         $group = str_replace(".", '', $request->input('new-group'));
         if ($group) {
-            return redirect()->action('\CodeMasterLTM\TranslationManager\Controller@getView', $group);
+            return redirect()->action('\CodeMaster\TranslationManager\Controller@getView', $group);
         } else {
             return redirect()->back();
         }

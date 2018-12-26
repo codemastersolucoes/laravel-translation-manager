@@ -1,8 +1,8 @@
 <?php
 
-namespace CodeMasterLTM\TranslationManager\Console;
+namespace CodeMaster\TranslationManager\Console;
 
-use CodeMasterLTM\TranslationManager\Manager;
+use CodeMaster\TranslationManager\Manager;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
@@ -23,7 +23,7 @@ class ExportCommand extends Command
      */
     protected $description = 'Export translations to PHP files';
 
-    /** @var \CodeMasterLTM\TranslationManager\Manager */
+    /** @var \CodeMaster\TranslationManager\Manager */
     protected $manager;
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace CodeMasterLTM\TranslationManager;
+namespace CodeMaster\TranslationManager;
 
 use Illuminate\Translation\TranslationServiceProvider as BaseTranslationServiceProvider;
 

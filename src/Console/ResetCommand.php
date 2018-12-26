@@ -1,9 +1,9 @@
 <?php
 
-namespace CodeMasterLTM\TranslationManager\Console;
+namespace CodeMaster\TranslationManager\Console;
 
 use Illuminate\Console\Command;
-use CodeMasterLTM\TranslationManager\Manager;
+use CodeMaster\TranslationManager\Manager;
 
 class ResetCommand extends Command
 {
@@ -21,7 +21,7 @@ class ResetCommand extends Command
      */
     protected $description = 'Delete all translations from the database';
 
-    /** @var \CodeMasterLTM\TranslationManager\Manager */
+    /** @var \CodeMaster\TranslationManager\Manager */
     protected $manager;
 
     /**

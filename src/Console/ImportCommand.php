@@ -1,8 +1,8 @@
 <?php
 
-namespace CodeMasterLTM\TranslationManager\Console;
+namespace CodeMaster\TranslationManager\Console;
 
-use CodeMasterLTM\TranslationManager\Manager;
+use CodeMaster\TranslationManager\Manager;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 
@@ -22,7 +22,7 @@ class ImportCommand extends Command
      */
     protected $description = 'Import translations from the PHP sources';
 
-    /** @var \CodeMasterLTM\TranslationManager\Manager */
+    /** @var \CodeMaster\TranslationManager\Manager */
     protected $manager;
 
     /**

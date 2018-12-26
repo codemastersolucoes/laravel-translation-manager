@@ -6,7 +6,7 @@
  * Time: 12:40 PM
  */
 
-namespace CodeMasterLTM\TranslationManager\Events;
+namespace CodeMaster\TranslationManager\Events;
 
 
 class TranslationsExportedEvent

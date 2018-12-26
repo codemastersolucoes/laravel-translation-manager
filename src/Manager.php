@@ -1,9 +1,9 @@
 <?php
 
-namespace CodeMasterLTM\TranslationManager;
+namespace CodeMaster\TranslationManager;
 
-use CodeMasterLTM\TranslationManager\Events\TranslationsExportedEvent;
-use CodeMasterLTM\TranslationManager\Models\Translation;
+use CodeMaster\TranslationManager\Events\TranslationsExportedEvent;
+use CodeMaster\TranslationManager\Models\Translation;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Filesystem\Filesystem;

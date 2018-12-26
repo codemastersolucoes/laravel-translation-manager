@@ -1,8 +1,8 @@
 <?php
 
-namespace CodeMasterLTM\TranslationManager\Console;
+namespace CodeMaster\TranslationManager\Console;
 
-use CodeMasterLTM\TranslationManager\Manager;
+use CodeMaster\TranslationManager\Manager;
 use Illuminate\Console\Command;
 
 class CleanCommand extends Command
@@ -21,7 +21,7 @@ class CleanCommand extends Command
      */
     protected $description = 'Clean empty translations';
 
-    /** @var \CodeMasterLTM\TranslationManager\Manager */
+    /** @var \CodeMaster\TranslationManager\Manager */
     protected $manager;
 
     /**
